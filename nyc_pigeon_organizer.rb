@@ -6,22 +6,54 @@
 
 # alt data set is to implement a process for converting any hash data that is in the original structure
 
+require 'pry'
 
-
-def nyc_pigeon_organizer(data)
-  
-final_results = data.each_with_object({}) do |(key, value), final_array|
+def nyc_pigeon_organizer(pigeon_data)
+  new_hash = {}
+  pigeon_data.each do |key, value|
     value.each do |inner_key, inner_value|
+      binding.pry 
       inner_value.each do |name|
-        if !final_array[name]
-          final_array[name] = {}
-        end
-        if !final_array[name][key]
-          !final_array[name][key] = []
-        end
-        final_array[name][key].push(inner_key.to_s)
       end
-    end
+    end 
   end 
-
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def nyc_pigeon_organizer(data)
+  
+# final_results = data.each_with_object({}) do |(key, value), final_array|
+#     value.each do |inner_key, inner_value|
+#       binding.pry 
+#       inner_value.each do |name|
+#         if !final_array[name]
+#           final_array[name] = {}
+#         end
+#         if !final_array[name][key]
+#           !final_array[name][key] = []
+#         end
+#         final_array[name][key].push(inner_key.to_s)
+#       end
+#     end
+#   end 
+
+# end
